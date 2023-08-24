@@ -1,0 +1,52 @@
+plugins {
+    id 'java-library'
+    id 'maven-publish'
+}
+
+version '1.0.0'
+
+
+dependencies {
+    api 'org.slf4j:slf4j-api:2.0.7'
+    api 'io.github.luiinge:slf4j-ansi:1.0.0'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.9.2'
+    testImplementation 'org.assertj:assertj-core:3.24.2'
+    testImplementation 'org.junit.jupiter:junit-jupiter-engine:5.9.2'
+    testImplementation 'org.slf4j:slf4j-simple:2.0.5'
+    testImplementation 'org.apiguardian:apiguardian-api:1.1.2'
+}
+
+
+allprojects {
+
+    group 'io.github.luiinge'
+
+    apply plugin : 'java-library'
+    apply plugin : 'maven-publish'
+
+
+    test {
+        useJUnitPlatform()
+    }
+
+    dependencies {
+        testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+        testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+    }
+
+    repositories {
+        mavenLocal()
+        mavenCentral()
+    }
+
+    publishing {
+        publications {
+            mavenJava(MavenPublication) {
+                from components.java
+            }
+        }
+    }
+
+}
+
+

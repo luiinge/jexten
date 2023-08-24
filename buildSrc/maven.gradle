@@ -1,0 +1,16 @@
+plugins {
+    id 'java-library'
+    id 'maven-publish'
+}
+
+buildscript {
+
+    publishing {
+        publications {
+            mavenJava(MavenPublication) {
+                from components.java
+            }
+        }
+    }
+}
+

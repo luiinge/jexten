@@ -1,0 +1,6 @@
+version '1.0.0'
+
+dependencies {
+    api rootProject
+    api 'io.github.luiinge:maven-fetcher:1.7.0'
+}

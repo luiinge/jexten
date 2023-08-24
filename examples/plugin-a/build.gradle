@@ -1,0 +1,33 @@
+plugins {
+    id 'java-library'
+    id 'jexten.jexten-plugin' version '1.0.0'
+}
+
+group 'jexten.example'
+version '1.0.0'
+
+jextenPlugin {
+    name = 'Plugin A!'
+    description = 'This is the plugin A'
+}
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
+dependencies {
+    api 'io.github.luiinge:jexten:1.0.0'
+    jextenApplication rootProject
+    implementation 'org.apache.logging.log4j:log4j-api:2.20.0'
+    api 'org.fusesource.jansi:jansi:2.4.0'
+    annotationProcessor 'io.github.luiinge:jexten-processor:1.0.0'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+}
+
+test {
+    useJUnitPlatform()
+}
+
+

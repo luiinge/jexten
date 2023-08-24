@@ -1,0 +1,20 @@
+plugins {
+    id 'groovy-gradle-plugin'
+}
+
+version '1.0.0'
+
+gradlePlugin {
+    plugins {
+        simplePlugin {
+            id = 'jexten.jexten-plugin'
+            implementationClass = 'jexten.gradle.JextenGradlePlugin'
+        }
+    }
+}
+
+
+dependencies {
+    api rootProject
+    testImplementation 'org.assertj:assertj-core:3.24.2'
+}

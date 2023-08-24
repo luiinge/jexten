@@ -1,0 +1,38 @@
+plugins {
+    id 'java'
+    id 'application'
+    id 'org.javamodularity.moduleplugin' version '1.8.12'
+}
+
+group 'jexten.examples'
+version '1.0.0'
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'io.github.luiinge:jexten:1.0.0'
+    implementation 'io.github.luiinge:jexten-maven-resolver:1.0.0'
+    implementation 'org.apache.logging.log4j:log4j-api:2.20.0'
+    implementation 'org.slf4j:slf4j-simple:2.0.5'
+    annotationProcessor 'io.github.luiinge:jexten-processor:1.0.0'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+}
+
+test {
+    useJUnitPlatform()
+}
+
+application {
+    mainModule = 'jexten.examples'
+    mainClass = 'jexten.examples.App'
+}
+
+java {
+    modularity.inferModulePath = false
+}
+
+

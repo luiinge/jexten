@@ -1,0 +1,6 @@
+rootProject.name = 'jexten'
+include 'jexten-processor'
+include 'jexten-maven-resolver'
+include 'jexten-gradle-plugin'
+
+
